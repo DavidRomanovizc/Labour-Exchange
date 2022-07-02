@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:11-alpine
+    restart: always
+    ports:
+      - "32700:5432"
+    volumes:
+      - ./postgres:/var/lib/postgresql
+    environment:
+      POSTGRES_USER: PG_USER
+      POSTGRES_PASSWORD: PG_PASSWORD
+      PG_NAME: PG_NAME
